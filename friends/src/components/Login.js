@@ -15,12 +15,13 @@ const Login = () => {
         axios.post('http://localhost:5000/api/login', user)
             .then(res => {
                 console.log(res.data)
+            .catch(err => console.log(err.response))
             })
     }
 
     return (
         <div>
-            <form >
+            <form onSubmit={loginSubmit}>
                 <input type='text' name='username' value={user.username} placeholder='Username' onChange={handleChange} />
                 <input type='text' name='password' value={user.password} placeholder='Password' onChange={handleChange} />
                 <button>Submit</button>
