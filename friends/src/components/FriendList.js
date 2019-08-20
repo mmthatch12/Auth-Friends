@@ -1,6 +1,6 @@
 import React from 'react'
 import { Form, Field, withFormik } from 'formik'
-import axios from 'axios'
+import { axiosWithAuth } from '../utils/axiosWithAuth'
 
 import FriendData from './FriendData'
 
@@ -30,8 +30,8 @@ const FormikFriendList = withFormik({
         }
     },
 
-    handleSubmit(value, { resetForm, setStatus }) {
-        axios.post('http://localhost:5000/api/friend', value)
+    handleSubmit(values, { resetForm, setStatus }) {
+        axiosWithAuth().post('http://localhost:5000/api/friends', values)
             .then(res => {
                 console.log('post request', res.data)
                 setStatus(res.data)
@@ -40,7 +40,7 @@ const FormikFriendList = withFormik({
             .catch(err => {
                 console.log(err.response)
             })
-    }
+    },
 })(FriendList)
 
 export default FormikFriendList

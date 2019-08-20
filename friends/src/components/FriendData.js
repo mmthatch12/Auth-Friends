@@ -6,14 +6,26 @@ const FriendData = () => {
 
     useEffect(() => {
         axiosWithAuth()
-        .get('http://localhost:5000/api/friend')
-        .then(res => console.log(res.data))
+        .get('http://localhost:5000/api/friends')
+        .then(res => {console.log(res.data)
+            const theInfo = res.data
+            setFriendList(theInfo)
+            })
         .catch(err => console.log(err.response))
 
     }, [])
 
     return (
-        <h1>Friend data</h1>
+        friendList.map(friend => {
+            return (
+                <div key={friend.id}>
+                    <h2>{friend.name}</h2>
+                    <h2>{friend.age}</h2>
+                    <h2>{friend.email}</h2>
+                </div>
+            
+            )
+        })
     )
 
 
