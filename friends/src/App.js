@@ -4,6 +4,7 @@ import { Route, Link } from 'react-router-dom'
 
 import Login from './components/Login'
 import FriendList from './components/FriendList'
+import PrivateRoute from './components/PrivateRoute'
 
 
 function App() {
