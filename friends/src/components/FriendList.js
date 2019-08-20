@@ -24,7 +24,7 @@ const FormikFriendList = withFormik({
     },
 
     handleSubmit(value, { resetForm, setStatus }) {
-        axios.post('http://localhost:5000/api/friend')
+        axios.post('http://localhost:5000/api/friend', value)
             .then(res => {
                 console.log('post request', res.data)
                 setStatus(res.data)

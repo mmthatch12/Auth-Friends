@@ -3,7 +3,7 @@ import './App.css';
 import { Route, Link } from 'react-router-dom'
 
 import Login from './components/Login'
-import FriendList from './components/FriendList'
+import FormikFriendList from './components/FriendList'
 import PrivateRoute from './components/PrivateRoute'
 
 
@@ -15,7 +15,7 @@ function App() {
       <Link to='/friendslist'>Friends</Link>
       
       <Route path='/login' component={Login} />
-      <PrivateRoute exact path='/protected' component={FriendList} />
+      <PrivateRoute exact path='/protected' component={FormikFriendList} />
     </div>
   );
 }
