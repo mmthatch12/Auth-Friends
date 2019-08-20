@@ -9,7 +9,9 @@ import Login from './components/Login'
 function App() {
   return (
     <div className="App">
+      <Link to='/'>Home</Link> {' '}
       <Link to='/login'>Login</Link>
+      
       <Route path='/login' component={Login} />
     </div>
   );

@@ -4,6 +4,7 @@ const Login = () => {
     return (
         <form>
             <input type='text' placeholder='Username' />
+            <input type='text' placeholder='Password' />
         </form>
     )
 }
