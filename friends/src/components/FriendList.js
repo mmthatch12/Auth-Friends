@@ -2,15 +2,22 @@ import React from 'react'
 import { Form, Field, withFormik } from 'formik'
 import axios from 'axios'
 
+import FriendData from './FriendData'
+
 
 const FriendList = () => {
+
     return (
-        <Form>
-            <Field type='text' name='name' placeholder='Name' />
-            <Field type='number' name='age' placeholder='Age' />
-            <Field type='email' name='email' placeholder='Email' />
-            <button type='submit'>Add Friend!</button>
-        </Form>
+        <div>
+            <Form>
+                <Field type='text' name='name' placeholder='Name' />
+                <Field type='number' name='age' placeholder='Age' />
+                <Field type='email' name='email' placeholder='Email' />
+                <button type='submit'>Add Friend!</button>
+            </Form>
+
+            <FriendData />
+        </div>
     )
 }
 

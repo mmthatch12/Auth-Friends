@@ -15,7 +15,7 @@ function App() {
       <Link to='/friendslist'>Friends</Link>
       
       <Route path='/login' component={Login} />
-      <PrivateRoute exact path='/protected' component={FormikFriendList} />
+      <PrivateRoute exact path='/friendslist' component={FormikFriendList} />
     </div>
   );
 }

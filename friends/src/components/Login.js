@@ -16,8 +16,8 @@ const Login = () => {
             .then(res => {
                 console.log(res.data)
                 localStorage.setItem('token', res.data.payload)
-            .catch(err => console.log(err.response))
             })
+            .catch(err => console.log(err.response))
     }
 
     return (
